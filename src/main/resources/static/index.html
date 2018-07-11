@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script type="text/javascript" src="./js/jquery-1.11.3.min.js"></script>
+    <script type="text/javascript" src="./js/json2.js"></script>
+
+</head>
+<body>
+    <a id="TESTA" class="TESTA" href="">本地A连接</a>
+<br>
+    <a id="TESTB" class="TESTB" href="">远程B连接</a>
+</body>
+
+<script type="text/javascript">
+    $("#TESTA").on("click",function() {
+        $.ajax({
+            type: "post",
+            dataType: "json",
+            url: '/getToken',
+            contentType: "application/json",
+            data:JSON.stringify({
+                username:"cy",
+                password:"123456"
+            }),
+            success:function(result){
+                console.log(result);
+                localStorage.setItem("token",result);
+                window.location.href = "localhost:8181/testA.html";
+            },
+            error:function(){
+                alert("error");
+            }
+        });
+    });
+</script>
+
+<script type="text/javascript">
+
+//    $("#TESTB").on("click",function() {
+//        var token = localStorage.getItem("token");
+//        $.ajax({
+//            type: "post",
+//            dataType: "json",
+//            url: '/getToken',
+//            contentType: "application/json",
+//            data:JSON.stringify({
+//                token:token
+//            }),
+//            success:function(result){
+//                console.log(result);
+//            }
+//        });
+//    });
+</script>
+</html>
