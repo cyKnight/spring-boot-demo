@@ -10,4 +10,6 @@ import com.github.pagehelper.Page;
 
 public interface UserMapper extends MyMapper<User> {
     public Page<User> findUserInfo(User user);
+
+    public void insertMycat(User user);
 }

@@ -32,15 +32,15 @@ public class UserController extends BaseController {
     @RequestMapping(value = "/getUserInfo",method = RequestMethod.POST)
     @ResponseBody
 //    @LoggerManager(logDescription = "22222222222222222222")
-    public PageInfo<User> getUserInfo(@RequestBody Map<String,Object> map,
+    public PageInfo<User> getUserInfo(@RequestBody(required=false) Map<String,Object> map,
                                       HttpServletRequest request,
                                       HttpServletResponse response) {
 
-        User user = new User();
-        user.setUserName("base");
-        user.setPassword("base");
-        user.setDescription("base");
-        userService.insert(user);
+//        User user = new User();
+//        user.setUserName("base");
+//        user.setPassword("base");
+//        user.setDescription("base");
+//        userService.insert(user);
 
         Page<User> userList = userService.getUserInfo(2, 2);
         PageInfo<User> userPageInfo = new PageInfo<>(userList);

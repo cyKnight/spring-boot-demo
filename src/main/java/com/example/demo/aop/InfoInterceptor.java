@@ -32,7 +32,7 @@ import java.util.Set;
  * Created by user on 2018/6/2.
  * @author
  */
-@Aspect
+//@Aspect
 @Configuration
 public class InfoInterceptor {
 

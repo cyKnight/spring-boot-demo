@@ -40,7 +40,9 @@ public class UserServiceImpl implements UserService{
     public Page<User> getUserInfo(int pageNo, int pageSize){
         PageHelper.startPage(pageNo, pageSize);
         User user = new User();
-        user.setUserName("11");
-        return userMapper.findUserInfo(user);
+        user.setUserName("demoTest");
+        userMapper.insertMycat(user);
+        return null;
+//        return userMapper.findUserInfo(user);
     }
 }

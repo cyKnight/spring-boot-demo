@@ -25,4 +25,13 @@
             </if>
         </where>
     </select>
+
+    <insert id="insertMycat" parameterType="user" useGeneratedKeys="true" keyProperty="id">
+      INSERT INTO travelrecord(
+      `id`,
+      `name`)
+      VALUES (
+      'next value for MYCATSEQ_TRAVELRECORD',
+      #{userName})
+    </insert>
 </mapper>
